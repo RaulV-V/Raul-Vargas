@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import {
   SiExpo,
@@ -10,17 +10,15 @@ import {
 } from "react-icons/si";
 import { MdOutlineTimer } from "react-icons/md";
 
-export default function StudyAppProjectPage({
-  title = "Study Buddy Study App",
-  image = "/Appst.png",
-  description = `Study Buddy is a mobile study app currently in development. It helps users stay accountable by tracking how much time they spend actively studying and taking breaks. The app automatically pauses the study timer when users switch to other apps, ensuring accurate focus logging. It also records break durations to help build balanced and effective study habits.
+export default function StudyAppProjectPage() {
+  const title = "Study Buddy Study App";
+  const image = "/Appst.png";
+  const description = `Study Buddy is a mobile study app currently in development. It helps users stay accountable by tracking how much time they spend actively studying and taking breaks. The app automatically pauses the study timer when users switch to other apps, ensuring accurate focus logging. It also records break durations to help build balanced and effective study habits.
 
 The app is built using React Native and Expo Go for fast testing on mobile devices, with local storage powered by SQLite through expo-sqlite/next.
 
-In future versions, the app will include social features like adding friends, studying together, and comparing study time stats to build healthy accountability and motivation.`,
-  link = "https://github.com/RaulV-V/StudyApplication", 
-}) {
-  const router = useRouter();
+In future versions, the app will include social features like adding friends, studying together, and comparing study time stats to build healthy accountability and motivation.`;
+  const link = "https://github.com/RaulV-V/StudyApplication";
 
   const technologies = [
     { name: "React Native", icon: <FaReact /> },
@@ -41,6 +39,7 @@ In future versions, the app will include social features like adding friends, st
           src={image}
           alt={title}
           fill
+          unoptimized
           className="object-cover"
           priority
         />
@@ -68,12 +67,12 @@ In future versions, the app will include social features like adding friends, st
       </section>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <button
-          onClick={() => router.back()}
-          className="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium text-stone-700"
+        <Link
+          href="/"
+          className="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium text-stone-700 text-center"
         >
           Go Back
-        </button>
+        </Link>
 
         <a
           href={link}

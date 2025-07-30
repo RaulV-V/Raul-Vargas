@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { FaReact } from "react-icons/fa";
 import {
   SiExpo,
@@ -10,13 +10,12 @@ import {
   SiJavascript,
 } from "react-icons/si";
 
-export default function PollutePetPage({
-  title = "PollutePet",
-  image = "/Pollute.png",
-  description = "PollutePet is a hackathon project designed to raise awareness about pollution and climate change. The app was built with Expo Go to run seamlessly on mobile devices. It pulls real-time data from NASA APIs to simulate environmental conditions, adjusting in-game temperatures and pollution levels. Players care for a virtual pet whose health is directly tied to environmental stats like pollution levels, CO₂ emissions, and global temperature trends.",
-  link = "https://github.com/s1rcapalott/PollutePet", // Replace if you have a live link
-}) {
-  const router = useRouter();
+export default function PollutePetPage() {
+  const title = "PollutePet";
+  const image = "/Pollute.png";
+  const description =
+    "PollutePet is a hackathon project designed to raise awareness about pollution and climate change. The app was built with Expo Go to run seamlessly on mobile devices. It pulls real-time data from NASA APIs to simulate environmental conditions, adjusting in-game temperatures and pollution levels. Players care for a virtual pet whose health is directly tied to environmental stats like pollution levels, CO₂ emissions, and global temperature trends.";
+  const link = "https://github.com/s1rcapalott/PollutePet";
 
   const technologies = [
     { name: "React Native", icon: <FaReact /> },
@@ -37,6 +36,7 @@ export default function PollutePetPage({
           src={image}
           alt={title}
           fill
+          unoptimized
           className="object-cover"
           priority
         />
@@ -48,7 +48,7 @@ export default function PollutePetPage({
 
       <section className="mb-12">
         <h2 className="text-xl font-semibold text-stone-700 mb-4 text-center">
-           Technologies Used
+          Technologies Used
         </h2>
         <div className="flex flex-wrap justify-center gap-4">
           {technologies.map((tech) => (
@@ -64,12 +64,12 @@ export default function PollutePetPage({
       </section>
 
       <div className="flex flex-col sm:flex-row justify-center gap-4">
-        <button
-          onClick={() => router.back()}
-          className="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium text-stone-700"
+        <Link
+          href="/"
+          className="px-6 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg text-sm font-medium text-stone-700 text-center"
         >
-           Go Back
-        </button>
+          Go Back
+        </Link>
 
         <a
           href={link}

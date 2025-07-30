@@ -95,11 +95,11 @@ export default function HomePage() {
             className="w-full max-w-sm rounded-2xl shadow-xl border border-gray-300"
           />
           <p className="text-blue-100 max-w-2xl text-lg md:text-2xl text-center md:text-left leading-relaxed drop-shadow-md">
-            My name is Raul Vargas, and I'm currently a third-year student at UC Merced pursuing degrees in Computer Science and Electrical Engineering. 
-            I'm passionate about continuously improving my skills as a developer and thrive when learning new technologies and adapting to change. 
+            My name is Raul Vargas, and I&apos;m currently a third-year student at UC Merced pursuing degrees in Computer Science and Electrical Engineering. 
+            I&apos;m passionate about continuously improving my skills as a developer and thrive when learning new technologies and adapting to change. 
             I greatly value teamwork and collaboration, especially when working together leads to creating something greater than what we could achieve individually.
             <br /><br />
-            When I’m not coding, I love hiking and spending time in nature. 
+            When I&apos;m not coding, I love hiking and spending time in nature. 
             It helps me stay grounded and curious about the natural world. 
             Some other hobbies I enjoy include video games, basketball, wrestling, and teaching.
           </p>
@@ -207,7 +207,7 @@ export default function HomePage() {
               />
             </div>
             <div className="p-4 bg-white">
-              <h3 className="text-xl font-semibold text-blue-900 mb-2">Susie Q's Coffee</h3>
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">Susie Q&apos;s Coffee</h3>
               <p className="text-gray-700 text-sm">
                 A full-stack e-commerce site for specialty coffee built with Next.js, Supabase, Google Maps Api, Sql, and Stripe.
               </p>
