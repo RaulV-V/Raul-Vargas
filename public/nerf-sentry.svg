@@ -1,0 +1,28 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" role="img" aria-label="Nerf Sentry Concept">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0ea5e9"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#bg)" rx="28"/>
+  <g stroke="#38bdf8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <rect x="310" y="150" width="180" height="140" rx="14"/>
+    <path d="M400 290 L400 360"/>
+    <path d="M360 360 L440 360"/>
+    <circle cx="280" cy="240" r="32"/>
+    <circle cx="520" cy="200" r="32"/>
+    <path d="M520 200 L640 170"/>
+    <path d="M520 200 L630 230"/>
+    <path d="M280 240 L180 240"/>
+    <path d="M400 220 L470 190"/>
+  </g>
+  <g fill="#e2e8f0" font-family="'Segoe UI', Arial, sans-serif" font-weight="700">
+    <text x="70" y="90" font-size="44">Nerf Sentry Gun</text>
+    <text x="70" y="140" font-size="24" opacity="0.9">OpenCV tracking · Pan/Tilt PID · Flywheel + pusher control</text>
+  </g>
+  <g fill="#cbd5e1" font-family="'Segoe UI', Arial, sans-serif" font-size="22" opacity="0.9">
+    <text x="100" y="420">Vision-guided turret that locks on targets and auto-fires safely</text>
+  </g>
+</svg>

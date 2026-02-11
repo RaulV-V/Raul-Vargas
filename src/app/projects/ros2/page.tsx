@@ -2,21 +2,22 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { SiCplusplus, SiOpengl } from "react-icons/si";
-import { FaCode } from "react-icons/fa";
+import { SiCplusplus, SiLinux } from "react-icons/si";
+import { GiRobotGolem, GiPathDistance } from "react-icons/gi";
+import { FaRoute } from "react-icons/fa";
 
-export default function RaytracerProjectPage() {
-  const title = "Custom Raytracing Projects";
-  const image = "/Raytrace.png";
-  const description = `This project showcases a series of raytracers I built from scratch during my academic journey. I implemented both CPU-based and GPU-accelerated versions to simulate realistic lighting, shadows, motion blur, reflections, and materials. The project taught me key graphics concepts like ray-sphere intersection, diffractions, recursion for reflections, and pixel shaders.
-
-In other projects I also experimented with OpenGL where I made rasterizations instead of ray tracing. This taught me about manipulating projection matrices, using multivariable calculus, and learning about how computer graphics work.`;
-  const link = "https://github.com/RaulV-V/Raytrace";
+export default function Ros2ProjectPage() {
+  const title = "ROS2 Human Detection & Navigation Robot";
+  const image = "/ros2.png";
+  const description = `Built a modular ROS2 stack that can patrol, detect people, and navigate toward them in simulation. Authored navigation, detection, and controller nodes, filtered detections before publishing, and tuned Nav2 parameters for smooth approach behavior. Tested behavior in Gazebo worlds to validate stable control, collision avoidance, and recovery behaviors.`;
+  const link = "https://github.com/RaulV-V/ros-human-finder";
 
   const technologies = [
     { name: "C++", icon: <SiCplusplus /> },
-    { name: "OpenGL", icon: <SiOpengl /> },
-    { name: "Low-Level Rendering", icon: <FaCode /> },
+    { name: "ROS2", icon: <GiRobotGolem /> },
+    { name: "Nav2 Stack", icon: <FaRoute /> },
+    { name: "Gazebo Simulation", icon: <GiPathDistance /> },
+    { name: "Linux", icon: <SiLinux /> },
   ];
 
   return (
@@ -25,7 +26,7 @@ In other projects I also experimented with OpenGL where I made rasterizations in
         {title}
       </h1>
 
-      <div className="relative w-full max-w-4xl mx-auto h-[600px] rounded-xl overflow-hidden shadow-lg mb-8">
+      <div className="relative w-full max-w-4xl mx-auto h-[520px] rounded-xl overflow-hidden shadow-lg mb-8 bg-slate-900">
         <Image
           src={image}
           alt={title}
@@ -71,16 +72,7 @@ In other projects I also experimented with OpenGL where I made rasterizations in
           rel="noopener noreferrer"
           className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium text-center"
         >
-          View Code
-        </a>
-
-        <a
-          href="https://github.com/RaulV-V/GraphicsLearning"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="px-6 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-sm font-medium text-center"
-        >
-          View Other Graphics Projects
+          View Repository
         </a>
       </div>
     </main>
