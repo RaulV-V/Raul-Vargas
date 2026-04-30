@@ -1,4 +1,5 @@
-import Image from "next/image";
+// app/page.tsx or pages/index.tsx
+
 import Link from "next/link";
 import {
   FaGithub,
@@ -7,16 +8,18 @@ import {
   FaJsSquare,
   FaPython,
   FaCuttlefish,
-  FaTools,
-  FaMicrochip,
-  FaDownload,
+  FaReact,
 } from "react-icons/fa";
 import {
   SiTypescript,
+  SiTailwindcss,
   SiCplusplus,
+  SiNextdotjs,
+  SiWebgpu,
+  SiOpengl,
+  SiOpencv,
   SiMysql,
   SiGit,
-  SiStmicroelectronics,
   SiKicad,
 } from "react-icons/si";
 import {
@@ -30,12 +33,15 @@ import {
 import { MdSensors } from "react-icons/md";
 
 const skillsData = {
-  Languages: [
-    { icon: <FaCuttlefish />, name: "C" },
-    { icon: <SiCplusplus />, name: "C++" },
-    { icon: <FaPython />, name: "Python" },
+  "Programming & Tools": [
     { icon: <FaJsSquare />, name: "JavaScript" },
     { icon: <SiTypescript />, name: "TypeScript" },
+    { icon: <FaPython />, name: "Python" },
+    { icon: <FaCuttlefish />, name: "C" },
+    { icon: <SiCplusplus />, name: "C++" },
+    { icon: <FaReact />, name: "React" },
+    { icon: <SiNextdotjs />, name: "Next.js" },
+    { icon: <SiTailwindcss />, name: "Tailwind CSS" },
     { icon: <SiMysql />, name: "SQL" },
     { icon: <SiGit />, name: "Git" },
   ],
@@ -106,13 +112,12 @@ const experiences = [
 export default function HomePage() {
   return (
     <main className="min-h-screen font-sans text-gray-800">
+
       {/* Banner */}
-      <header className="relative w-full h-[55vh] sm:h-[60vh] lg:h-[70vh] bg-[#87CEEB]">
-        <Image
+      <header className="relative w-full h-[50vh] sm:h-[60vh] lg:h-[70vh] bg-[#87CEEB]">
+        <img
           src="/Cloudsbg3.png"
           alt="Clouds Banner"
-          fill
-          priority
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
         <div className="relative z-10 flex flex-col items-center justify-start h-full text-stone-700 text-center px-4 pt-16 md:pt-24">
@@ -136,21 +141,15 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
-          <div className="w-full max-w-sm rounded-2xl shadow-xl border border-gray-300 overflow-hidden">
-            <Image
-              src="/profile.jpg"
-              alt="Raul hiking"
-              width={640}
-              height={800}
-              className="w-full h-full object-cover"
-              priority
-            />
-          </div>
+          <img
+            src="/profile.jpg"
+            alt="Raul hiking"
+            className="w-full max-w-sm rounded-2xl shadow-xl border border-gray-300"
+          />
           <p className="text-blue-100 max-w-2xl text-lg md:text-2xl text-center md:text-left leading-relaxed drop-shadow-md">
             My name is Raul Vargas, and I&apos;m a third-year Electrical Engineering
             student at UC Merced with a 3.83 GPA. I love building physical things such as circuits, sensors, embedded systems, and I
-            get just as much satisfaction tracing down a noise source on a PCB as I
-            do shipping a web app.
+            get excited about projects that combine hardware and software to solve real-world problems.
             <br /><br />
             Right now I&apos;m redesigning a real industrial instrument for the Safe Food
             Alliance and leading the electrical team for our Formula SAE electric
@@ -167,8 +166,6 @@ export default function HomePage() {
             Skills
           </h2>
         </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-gray-800">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-gray-800">
           {Object.entries(skillsData).map(([title, skills]) => (
             <div key={title}>
@@ -177,12 +174,12 @@ export default function HomePage() {
                 {skills.map(({ icon, name }) => (
                   <div
                     key={name}
-                    className="flex items-center gap-3 p-4 border rounded-lg shadow hover:shadow-lg hover:bg-amber-50 transition-all duration-300 cursor-pointer"
+                    className="flex flex-col items-center justify-center text-center p-4 border rounded-lg shadow hover:shadow-lg hover:bg-amber-50 transition-all duration-300 cursor-pointer"
                   >
-                    <div className="text-2xl text-amber-600 hover:scale-110 transition-transform duration-300">
+                    <div className="text-3xl text-amber-600 hover:scale-110 transition-transform duration-300">
                       {icon}
                     </div>
-                    <span className="text-sm font-medium">{name}</span>
+                    <span className="mt-2 text-sm font-medium">{name}</span>
                   </div>
                 ))}
               </div>
@@ -201,7 +198,6 @@ export default function HomePage() {
             Experience
           </h2>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {experiences.map((exp) => (
             <div
@@ -223,15 +219,14 @@ export default function HomePage() {
       </section>
 
       {/* Projects Section */}
-      {/* Projects Section */}
       <section id="projects" className="bg-white px-6 py-16 md:py-20">
         <div className="flex justify-start mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-stone-700 px-8 py-4">
             Projects
           </h2>
         </div>
-
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
           {/* Coffee Website */}
           <Link
             href="/projects/coffee"
@@ -255,7 +250,7 @@ export default function HomePage() {
             </div>
           </Link>
 
-          {/* React Native Game */}
+          {/* Pollutpet */}
           <Link
             href="/projects/pollutepet"
             className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
@@ -359,14 +354,11 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section
-        id="contact"
-        className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
-      >
+{/* Contact Section */}
       <section
         id="contact"
         className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
@@ -377,42 +369,12 @@ export default function HomePage() {
           </h2>
         </div>
         <p className="text-blue-100 text-base md:text-lg text-center drop-shadow-sm">
-          Reach out anytime-email is fastest. Resume updated Feb 11, 2026.
+          Feel free to reach out via email or follow me on socials:
         </p>
         <div className="flex gap-6 text-2xl md:text-3xl text-blue-100 justify-center mt-4">
-          <a
-            href="mailto:rvar3926@gmail.com"
-            title="Email"
-            className="hover:text-white transition"
-          >
-            <FaEnvelope />
-          </a>
-          <a
-            href={contact.github}
-            target="_blank"
-            title="GitHub"
-            className="hover:text-white transition"
-          >
-            <FaGithub />
-          </a>
-          <a
-            href={contact.linkedin}
-            target="_blank"
-            title="LinkedIn"
-            className="hover:text-white transition"
-          >
-            <FaLinkedin />
-          </a>
-        </div>
-        <div className="flex justify-center mt-6">
-          <a
-            href={contact.resume}
-            download
-            className="inline-flex items-center gap-2 px-5 py-2 bg-white text-blue-800 font-medium rounded-lg shadow hover:bg-blue-50 transition"
-          >
-            <FaDownload />
-            <span>Download Resume</span>
-          </a>
+          <a href="mailto:rvar3926@gmail.com" title="Email" className="hover:text-white transition"><FaEnvelope /></a>
+          <a href="https://github.com/RaulV-V" target="_blank" title="GitHub" className="hover:text-white transition"><FaGithub /></a>
+          <a href="https://linkedin.com/in/raul-vargas-8428a4274/" target="_blank" title="LinkedIn" className="hover:text-white transition"><FaLinkedin /></a>
         </div>
       </section>
 
@@ -420,7 +382,7 @@ export default function HomePage() {
       <footer className="bg-gray-100 pt-12 border-t border-gray-200 text-center text-sm text-gray-500">
         <p>Copyright of Raul Vargas</p>
       </footer>
+
     </main>
   );
 }
-
