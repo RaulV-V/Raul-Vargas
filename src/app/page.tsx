@@ -16,23 +16,18 @@ import {
   SiCplusplus,
   SiMysql,
   SiGit,
-  SiLinux,
+  SiStmicroelectronics,
+  SiKicad,
 } from "react-icons/si";
 import {
-  GiRobotGolem,
+  GiProcessor,
+  GiCircuitry,
+  GiWireframeGlobe,
+  GiHistogram,
   GiElectric,
-  GiRadarDish,
-  GiCpu,
-  GiSolderingIron,
+  GiRobotAntennas,
 } from "react-icons/gi";
-
-const contact = {
-  email: "rvar3926@gmail.com",
-  github: "https://github.com/RaulV-V",
-  linkedin: "https://linkedin.com/in/raul-vargas-8428a4274/",
-  resume: "/Raul_Vargas_EE.pdf",
-  location: "Tulare, CA",
-};
+import { MdSensors } from "react-icons/md";
 
 const skillsData = {
   Languages: [
@@ -42,64 +37,69 @@ const skillsData = {
     { icon: <FaJsSquare />, name: "JavaScript" },
     { icon: <SiTypescript />, name: "TypeScript" },
     { icon: <SiMysql />, name: "SQL" },
-  ],
-  "Tools & Platforms": [
-    { icon: <GiRobotGolem />, name: "ROS2" },
-    { icon: <SiLinux />, name: "Linux" },
     { icon: <SiGit />, name: "Git" },
-    { icon: <FaTools />, name: "MATLAB / Simulink" },
-    { icon: <GiElectric />, name: "LTspice" },
   ],
-  "Hardware & Lab": [
-    { icon: <GiRadarDish />, name: "Oscilloscope" },
-    { icon: <GiCpu />, name: "Microcontrollers" },
-    { icon: <FaMicrochip />, name: "PCB basics" },
-    { icon: <GiSolderingIron />, name: "Soldering" },
+  "Electrical Engineering": [
+    { icon: <GiCircuitry />, name: "PCB Design" },
+    { icon: <SiKicad />, name: "KiCad" },
+    { icon: <GiProcessor />, name: "Embedded Systems" },
+    { icon: <GiElectric />, name: "Signal Conditioning" },
+    { icon: <MdSensors />, name: "Analog Circuits" },
+    { icon: <GiRobotAntennas />, name: "FreeRTOS" },
+  ],
+  "Technical Areas": [
+    { icon: <SiWebgpu />, name: "WebGPU & WGSL" },
+    { icon: <GiWireframeGlobe />, name: "Game Development" },
+    { icon: <GiWireframeGlobe />, name: "Physics Simulations" },
+    { icon: <SiOpengl />, name: "OpenGL" },
+    { icon: <SiOpencv />, name: "OpenCV" },
+    { icon: <GiHistogram />, name: "Statistical Analysis" },
+    { icon: <GiProcessor />, name: "Algorithms" },
   ],
 };
 
-const projects = [
+const experiences = [
   {
-    slug: "/projects/ros2",
-    title: "ROS2 Human Detection Robot",
-    image: "ros2.png",
-    blurb:
-      "Modular ROS2 + Nav2 stack that patrols, detects people, and navigates toward them in Gazebo simulations.",
+    title: "Electrical Engineering",
+    org: "Safe Food Alliance",
+    year: "Jan 2026 – Present",
+    description:
+      "Redesigning a legacy analog DFA moisture meter into a modern digital sensing system. Developing signal conditioning circuitry, ADC integration, and microcontroller-based measurement control while collaborating with industry partners to define requirements and validation procedures.",
   },
   {
-    slug: "/projects/nerf-sentry",
-    title: "Nerf Sentry Gun (in progress)",
-    image: "nerf-sentry.svg",
-    blurb:
-      "Vision-guided Nerf turret in CAD + 3D-printed mounts; OpenCV tracking drives pan/tilt and motor control to auto-fire.",
+    title: "Electrical Team Lead",
+    org: "UC Merced Formula SAE",
+    year: "Aug 2025 – Present",
+    description:
+      "Elected by the team to lead all electrical systems design and integration for our FSAE electric vehicle. Leading the design of a 400+ V battery accumulator and coordinating subsystem development across the team to meet FSAE safety standards.",
   },
   {
-    slug: "/projects/coffee",
-    title: "Susie Q's Coffee",
-    image: "Coffee.png",
-    blurb:
-      "Full-stack ordering site for a local cafe with Stripe checkout, Supabase admin dashboard, and delivery distance logic.",
+    title: "Undergraduate Research Assistant",
+    org: "University of California, Merced",
+    year: "Jan 2026 – Present",
+    description:
+      "Building an ESP32-based biosignal acquisition pipeline for EMG muscle sensor data. Applying convolutional neural networks to classify limb position and using continuous wavelet transform for time-frequency feature extraction.",
   },
   {
-    slug: "/projects/pollutepet",
-    title: "PollutePet",
-    image: "Pollute.png",
-    blurb:
-      "React Native game built in 24 hours that ties a virtual pet's health to real NASA climate data.",
+    title: "Program Research Assistant",
+    org: "University of California, Merced",
+    year: "Sept 2025 – Present",
+    description:
+      "Conducting and coding student interviews to support engineering curriculum improvement initiatives. Analyzing qualitative data and research findings to guide program development decisions.",
   },
   {
-    slug: "/projects/raytrace",
-    title: "Ray Tracing Renderer",
-    image: "Raytrace.png",
-    blurb:
-      "CPU and GPU ray tracers written in C++ exploring reflections, shadows, and motion blur.",
+    title: "Programming Tutor & Office Hours Volunteer",
+    org: "UC Merced",
+    year: "2024",
+    description:
+      "Worked with professors to host office hours and tutor undergraduate students in an introductory programming course. Helped students debug code, understand key concepts, and build programming confidence.",
   },
   {
-    slug: "/projects/studyapp",
-    title: "Study Buddy",
-    image: "Appst.png",
-    blurb:
-      "Mobile study timer that pauses when you leave the app and tracks breaks with SQLite for accurate focus logging.",
+    title: "STEM Outreach Volunteer",
+    org: "Children's Engineering Program",
+    year: "2023",
+    description:
+      "Volunteered to teach children the basics of coding and engineering using hands-on tools like LEGO robotics to help students build and program vehicles, introducing them to logical thinking in a fun way.",
   },
 ];
 
@@ -119,29 +119,9 @@ export default function HomePage() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold drop-shadow-lg">
             Raul Vargas
           </h1>
-          <p className="mt-4 text-lg sm:text-xl md:text-2xl drop-shadow-md max-w-2xl">
-            Electrical Engineering student at UC Merced (Graduation: Jun 2027)
-            building robotics, embedded systems, and practical web tools.
+          <p className="mt-4 text-lg sm:text-xl md:text-2xl drop-shadow-md">
+            Electrical Engineer · Embedded Systems · Hardware Design · Nature Lover
           </p>
-          <p className="mt-2 text-base md:text-lg text-stone-700/80">
-            {contact.location} &nbsp;|&nbsp; GPA 3.80 &nbsp;|&nbsp; UC Merced
-          </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-            <a
-              href={contact.resume}
-              download
-              className="flex items-center gap-2 px-5 py-2 bg-blue-700 text-white rounded-lg shadow hover:bg-blue-800 transition"
-            >
-              <FaDownload />
-              <span>Download Resume</span>
-            </a>
-            <Link
-              href="#projects"
-              className="px-5 py-2 border border-blue-800 text-blue-800 rounded-lg shadow-sm hover:bg-blue-50 transition"
-            >
-              View Projects
-            </Link>
-          </div>
         </div>
       </header>
 
@@ -151,11 +131,9 @@ export default function HomePage() {
         className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
       >
         <div className="flex justify-start mb-12">
-          <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold relative z-10 text-white px-8 py-4 drop-shadow-lg">
-              About Me
-            </h2>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-white px-8 py-4 drop-shadow-lg">
+            About Me
+          </h2>
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-12">
           <div className="w-full max-w-sm rounded-2xl shadow-xl border border-gray-300 overflow-hidden">
@@ -169,15 +147,15 @@ export default function HomePage() {
             />
           </div>
           <p className="text-blue-100 max-w-2xl text-lg md:text-2xl text-center md:text-left leading-relaxed drop-shadow-md">
-            I am an Electrical Engineering student focused on robotics, embedded
-            systems, and full-stack tools that help teams get things done. I
-            enjoy designing clear system architectures, documenting tradeoffs,
-            and then validating ideas with hands-on prototypes.
-            <br />
-            <br />
-            Outside of class, I like hiking around California, teaching others
-            what I am learning, and iterating on side projects, from graphics to
-            mobile apps, that keep me curious and practical.
+            My name is Raul Vargas, and I&apos;m a third-year Electrical Engineering
+            student at UC Merced with a 3.83 GPA. I love building physical things such as circuits, sensors, embedded systems, and I
+            get just as much satisfaction tracing down a noise source on a PCB as I
+            do shipping a web app.
+            <br /><br />
+            Right now I&apos;m redesigning a real industrial instrument for the Safe Food
+            Alliance and leading the electrical team for our Formula SAE electric
+            vehicle. Outside of engineering, I spend a lot of time hiking, playing
+            basketball, and finding any excuse to be outdoors.
           </p>
         </div>
       </section>
@@ -185,20 +163,17 @@ export default function HomePage() {
       {/* Skills Section */}
       <section id="skills" className="bg-white px-6 py-16 md:py-20">
         <div className="flex justify-start mb-6">
-          <div className="relative inline-block px-6 py-3">
-            <h2 className="text-3xl md:text-4xl font-semibold relative z-10 text-stone-700">
-              Skills
-            </h2>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold text-stone-700 px-6 py-3">
+            Skills
+          </h2>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-gray-800">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 max-w-6xl mx-auto text-gray-800">
           {Object.entries(skillsData).map(([title, skills]) => (
             <div key={title}>
-              <h3 className="text-xl font-semibold mb-4 text-stone-700">
-                {title}
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
+              <h3 className="text-xl font-semibold mb-4 text-stone-700">{title}</h3>
+              <div className="grid grid-cols-3 gap-4">
                 {skills.map(({ icon, name }) => (
                   <div
                     key={name}
@@ -221,139 +196,169 @@ export default function HomePage() {
         id="experience"
         className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
       >
-        <div className="flex justify-start mb-6">
-          <div className="relative inline-block px-6 py-3">
-            <h2 className="text-3xl md:text-4xl font-semibold relative z-10 text-white drop-shadow-lg">
-              Experience
-            </h2>
-          </div>
+        <div className="flex justify-start mb-10">
+          <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-lg px-6 py-3">
+            Experience
+          </h2>
         </div>
 
-        <div className="space-y-10 text-white text-base md:text-lg">
-          <div className="bg-white/10 rounded-2xl p-6 shadow-lg border border-white/10">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              NSF RED Project - UC Merced
-            </h3>
-            <p className="text-blue-100 font-medium">
-              Research Assistant | Nov 2025 - Present | Merced, CA
-            </p>
-            <ul className="mt-2 space-y-2 list-disc list-inside text-blue-50 leading-relaxed">
-              <li>
-                Build department websites and progress dashboards for an
-                NSF-funded curriculum redesign effort.
-              </li>
-              <li>
-                Track milestones across faculty and staff, surfacing risks early
-                with simple status tools.
-              </li>
-              <li>
-                Review education research to guide data-informed features.
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-6 shadow-lg border border-white/10">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              Kingsburg Safe Food Alliance (Capstone)
-            </h3>
-            <p className="text-blue-100 font-medium">
-              Digital Moisture Meter Design | Jan 2026 - Dec 2026 | Kingsburg,
-              CA
-            </p>
-            <ul className="mt-2 space-y-2 list-disc list-inside text-blue-50 leading-relaxed">
-              <li>
-                Designed a digital moisture meter architecture to replace a
-                legacy analog system while keeping accuracy high.
-              </li>
-              <li>
-                Defined sensing chain, analog front-end, ADC choice, and digital
-                processing with calibration and manufacturability in mind.
-              </li>
-              <li>
-                Produced system block diagrams and documentation outlining risks
-                and future expansion ideas.
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-6 shadow-lg border border-white/10">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              Delta Mosquito and Vector Control District
-            </h3>
-            <p className="text-blue-100 font-medium">
-              Laboratory Technician | 2023 | Tulare County, CA
-            </p>
-            <ul className="mt-2 space-y-2 list-disc list-inside text-blue-50 leading-relaxed">
-              <li>
-                Performed electronics upkeep for field traps and sensors;
-                frequent soldering and board-level repairs to keep gear online.
-              </li>
-              <li>
-                Identified mosquito species and assisted with data collection to
-                monitor West Nile virus vectors.
-              </li>
-              <li>
-                Collaborated with field teams to deploy, service, and document
-                equipment under tight turnaround.
-              </li>
-            </ul>
-          </div>
-
-          <div className="bg-white/10 rounded-2xl p-6 shadow-lg border border-white/10">
-            <h3 className="text-xl md:text-2xl font-semibold">
-              University of California, Merced
-            </h3>
-            <p className="text-blue-100 font-medium">
-              Teaching Assistant | Jan 2025 - Jun 2025 | Merced, CA
-            </p>
-            <ul className="mt-2 space-y-2 list-disc list-inside text-blue-50 leading-relaxed">
-              <li>
-                Helped students debug data structures and algorithms during labs
-                and office hours.
-              </li>
-              <li>
-                Explained memory management and time/space tradeoffs with code
-                walkthroughs.
-              </li>
-            </ul>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {experiences.map((exp) => (
+            <div
+              key={exp.title + exp.org}
+              className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 hover:bg-white/20 transition-all duration-300"
+            >
+              <h3 className="text-xl md:text-2xl font-semibold text-white">
+                {exp.title}
+              </h3>
+              <p className="text-amber-300 font-medium mt-1">
+                {exp.org} · {exp.year}
+              </p>
+              <p className="mt-3 text-blue-100 leading-relaxed text-sm md:text-base">
+                {exp.description}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
       {/* Projects Section */}
+      {/* Projects Section */}
       <section id="projects" className="bg-white px-6 py-16 md:py-20">
         <div className="flex justify-start mb-12">
-          <div className="relative inline-block">
-            <h2 className="text-4xl md:text-5xl font-bold relative z-10 text-stone-700 px-8 py-4">
-              Projects
-            </h2>
-          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-stone-700 px-8 py-4">
+            Projects
+          </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {projects.map((project) => (
-            <Link
-              key={project.slug}
-              href={project.slug}
-              className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
-            >
-              <div className="h-48 md:h-56 bg-gray-100">
-                <Image
-                  src={`/${project.image}`}
-                  alt={`${project.title} preview`}
-                  width={960}
-                  height={560}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="p-4 bg-white">
-                <h3 className="text-xl font-semibold text-blue-900 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-gray-700 text-sm">{project.blurb}</p>
-              </div>
-            </Link>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {/* Coffee Website */}
+          <Link
+            href="/projects/coffee"
+            className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
+          >
+            <div className="h-48 md:h-56 bg-gray-100">
+              <img
+                src="coffee.png"
+                alt="Coffee Website Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                Susie Q&apos;s Coffee
+              </h3>
+              <p className="text-gray-700 text-sm">
+                A full-stack e-commerce site for specialty coffee built with
+                Next.js, Supabase, Google Maps API, SQL, and Stripe.
+              </p>
+            </div>
+          </Link>
+
+          {/* React Native Game */}
+          <Link
+            href="/projects/pollutepet"
+            className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
+          >
+            <div className="h-48 md:h-56 bg-gray-100">
+              <img
+                src="Pollute.png"
+                alt="Game App Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                Pollutpet
+              </h3>
+              <p className="text-gray-700 text-sm">
+                Built in 24 hours for the SASE hackathon. Competed in the
+                environmental track using a game to convey the impact of climate
+                change.
+              </p>
+            </div>
+          </Link>
+
+          {/* OpenGL Ray Tracer */}
+          <Link
+            href="/projects/raytrace"
+            className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
+          >
+            <div className="h-48 md:h-56 bg-gray-100">
+              <img
+                src="Raytrace.png"
+                alt="Ray Tracer Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                OpenGL Ray Tracer
+              </h3>
+              <p className="text-gray-700 text-sm">
+                A real-time ray tracer built in C++ and OpenGL with reflection,
+                shadows, and camera control.
+              </p>
+            </div>
+          </Link>
+
+          {/* Study Timer App */}
+          <Link
+            href="/projects/studyapp"
+            className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg hover:shadow-xl transition"
+          >
+            <div className="h-48 md:h-56 bg-gray-100">
+              <img
+                src="Appst.png"
+                alt="Study App Preview"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                In Progress: Study Timer App
+              </h3>
+              <p className="text-gray-700 text-sm">
+                A productivity-focused study app that tracks focus sessions,
+                breaks, and study statistics using SQLite and React Native.
+              </p>
+            </div>
+          </Link>
+
+          {/* Fruit Moisture Meter */}
+          <div className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+            <div className="h-48 md:h-56 bg-gradient-to-br from-blue-50 to-blue-100 flex items-center justify-center">
+              <GiCircuitry className="text-8xl text-blue-300" />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                In Progress: Fruit Moisture Meter
+              </h3>
+              <p className="text-gray-700 text-sm">
+                A commercial food-safety instrument built around an STM32F405,
+                transformer-coupled Wheatstone bridge, LT1167 instrumentation
+                amp, and full galvanic isolation. Targeting ~$85/unit for
+                agricultural use.
+              </p>
+            </div>
+          </div>
+
+          {/* Nerf Turret */}
+          <div className="group block rounded-2xl overflow-hidden border border-gray-200 shadow-lg">
+            <div className="h-48 md:h-56 bg-gradient-to-br from-amber-50 to-amber-100 flex items-center justify-center">
+              <GiRobotAntennas className="text-8xl text-amber-300" />
+            </div>
+            <div className="p-4 bg-white">
+              <h3 className="text-xl font-semibold text-blue-900 mb-2">
+                In Progress: Autonomous Nerf Turret
+              </h3>
+              <p className="text-gray-700 text-sm">
+                ESP32-controlled flywheel launcher with dual RS550 motors at
+                ~18,000 RPM. Integrating YOLOv8 for real-time person detection
+                and autonomous targeting.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -362,19 +367,21 @@ export default function HomePage() {
         id="contact"
         className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
       >
+      <section
+        id="contact"
+        className="bg-gradient-to-b from-[#87CEEB] to-[#1E40AF] px-6 py-16 md:py-24"
+      >
         <div className="flex justify-start mb-6">
-          <div className="relative inline-block px-6 py-3">
-            <h2 className="text-3xl md:text-4xl font-semibold relative z-10 text-white drop-shadow-lg">
-              Contact
-            </h2>
-          </div>
+          <h2 className="text-3xl md:text-4xl font-semibold text-white drop-shadow-lg px-6 py-3">
+            Contact
+          </h2>
         </div>
         <p className="text-blue-100 text-base md:text-lg text-center drop-shadow-sm">
           Reach out anytime-email is fastest. Resume updated Feb 11, 2026.
         </p>
         <div className="flex gap-6 text-2xl md:text-3xl text-blue-100 justify-center mt-4">
           <a
-            href={`mailto:${contact.email}`}
+            href="mailto:rvar3926@gmail.com"
             title="Email"
             className="hover:text-white transition"
           >
@@ -416,3 +423,4 @@ export default function HomePage() {
     </main>
   );
 }
+

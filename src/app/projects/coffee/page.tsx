@@ -13,7 +13,7 @@ import {
 } from "react-icons/si";
 
 export default function CoffeeProjectPage() {
-  const title = "Susie Q's Coffee";
+  const title = "Susie Q&apos;s Coffee";
   const image = "/Coffee.png";
   const description = `An online ordering website for a local coffee shop. Users can browse drinks, place pickup or delivery orders, and pay using Stripe. Admins manage incoming orders via a real-time dashboard with Supabase integration. The system also integrates with Google Maps API to calculate delivery distances, Twilio for SMS alerts, and Resend for email confirmations. Authentication for admins. Deployed on Vercel.`;
   const link = "https://susieqscoffee.cafe";
